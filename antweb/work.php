@@ -1,17 +1,12 @@
-<?php
-session_start();
+.<?php
 include_once("engine/header.php");
-mysql_connect($db_host,$db_user,$db_pass) or die("Error 101");
-mysql_select_db($db_name) or die("Error 102");
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-$_SESSION['cur_emp_id']=1;
-$_SESSION['cur_emp_name']="mad";
 
-$cur_emp_id=$_SESSION['cur_emp_id'];
-$cur_emp_name=$_SESSION['cur_emp_name'];
+$cur_emp_id=$_SESSION['user_id'];
+$cur_emp_name=$_SESSION['user_name'];
 
 ?>
 <html>
@@ -20,7 +15,7 @@ $cur_emp_name=$_SESSION['cur_emp_name'];
     </head>
     <body>
         <h1>Employee View</h1>
-        Welcome <?php echo $cur_emp_name; ?>
+        Welcome <?php echo $cur_emp_name ?>
         <div>Due Works<div>
         <table width="50%" border="1">
             <tr><td>Work ID</td><td>work Description</td><td>Due Date</td><td>Operation</td></tr>
