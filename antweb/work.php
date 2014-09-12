@@ -4,9 +4,12 @@ include_once("engine/header.php");
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+if(checkLoginUser($USER_TYPE_EMPLOYEE)){
+    initUser();
+}else{
+    die("Please login first. <br>Error 103");
+}
 
-$cur_emp_id=$_SESSION['user_id'];
-$cur_emp_name=$_SESSION['user_name'];
 
 ?>
 <html>

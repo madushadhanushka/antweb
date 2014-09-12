@@ -17,7 +17,7 @@ $USER_TYPE_EMPLOYEE = 3;
 
 $WORK_TYPE_WEB = 1;
 $WORK_TYPE_TYPING = 2;
-$WORK_TYPE_PRINTING = 3;
+$WORK_TYPE_PRINTING = 4;
 
 $WOTK_STATE_FREE = 1;
 $WORK_STATE_WORKING = 2;
@@ -57,4 +57,52 @@ function getMonth($i) {
     }
 }
 
+function getWorkType($type) {
+    $ret_type = "";
+    $count = 0;
+    if ($type & 1 == 1) {
+        if ($count == 0) {
+            $ret_type = $ret_type . 'Web Design';
+            $count++;
+        } else {
+            $ret_type = $ret_type . '<br>Web Design';
+        }
+    }
+    if ($type & 2 == 1) {
+        if ($count == 0) {
+            $ret_type = $ret_type . 'Type setting';
+            $count++;
+        } else {
+            $ret_type = $ret_type . '<br>Type setting';
+        }
+    }
+    if ($type & 4 == 1) {
+        if ($count == 0) {
+            $ret_type = $ret_type . 'Digital printing';
+            $count++;
+        } else {
+            $ret_type = $ret_type . '<br>Digital printing';
+        }
+    }
+    return $ret_type;
+}
+
+function checkLoginUser($usertype) {
+
+    if (isset($_SESSION['user_type'])) {
+        if ($_SESSION['user_type'] == $usertype) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+function initUser(){
+    if (isset($_SESSION['user_type'])) {
+        $cur_emp_id=$_SESSION['user_id'];
+        $cur_emp_name=$_SESSION['user_name'];
+    }
+}
 ?>
