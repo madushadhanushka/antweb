@@ -22,8 +22,8 @@ class Welcome extends CI_Controller {
 		$data['data1']="hello";
 		
 		//$this->load->view('welcome_message');
-		$this->load->view('templates/header');
-		$this->load->view('templates/footer');
+		$this->load->view('header');
+		$this->load->view('footer');
 	}
 	function about(){
 		$this->load->view('myview');

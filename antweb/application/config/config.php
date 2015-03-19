@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/my/antweb/';
+$config['base_url']	= 'http://localhost/work/antweb/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'antwebdessys';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
